@@ -11,6 +11,9 @@ var s = dhcpd.createServer({
   static: {
     "11:22:33:44:55:66": "192.168.3.100"
   },
+  selectAddress: function(clientMac, callback) {
+    callback(undefined, '192.168.3.99');
+  },
 
   // Option settings
   netmask: '255.255.255.0',
