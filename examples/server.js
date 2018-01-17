@@ -66,3 +66,7 @@ s.on("close", function () {
 });
 
 s.listen();
+
+process.on('SIGINT', () => {
+    s.close();
+});
